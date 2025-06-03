@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post[1] }} - MyThoughts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='FaviconImage.png') }}" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        a {
+            text-decoration: none;
+            color: #04AA6D;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>{{ post[1] }}</h2>
+
+    <p class="meta"><strong>By:</strong> {{ post[0] }} | <strong>Posted:</strong> {{ post[3] }}</p>
+
+    <p class="content">{{ post[2] }}</p>
+
+    <p class="stats">👁️ Views: {{ post[4] }} | ❤️ Likes: {{ post[5] }}</p>
+
+    <form method="POST">
+        <button type="submit" {% if liked %}disabled{% endif %}>❤️ Like</button>
+    </form>
+
+    <p><a href="/dashboard">← Back to Dashboard</a></p>
+
+</body>
+</html>

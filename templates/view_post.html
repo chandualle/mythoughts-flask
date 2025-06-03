@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post[1] }} - MyThoughts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='FaviconImage.png') }}" type="image/png">
+</head>
+<body>
+    <h2>{{ post[1] }}</h2>
+    <p>By <strong>{{ post[0] }}</strong> — <em>{{ post[3] }}</em></p>
+    <div style="border-top: 1px solid #ccc; padding-top: 10px;">
+        <p>{{ post[2] }}</p>
+    </div>
+    <p><a href="/dashboard">← Back to Dashboard</a></p>
+</body>
+</html>

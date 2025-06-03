@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post a Thought - MyThoughts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='FaviconImage.png') }}" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #038e5d;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #04AA6D;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .success-msg {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="POST">
+        <h2>Share a Thought</h2>
+
+        <label>Title:</label>
+        <input type="text" name="title" maxlength="60" placeholder="Max 60 Characters">
+
+        <label>Content:</label>
+        <textarea name="content" rows="5" required></textarea>
+
+        <button type="submit">Post</button>
+
+        <p class="success-msg">{{ msg }}</p>
+        <p><a href="/dashboard">← Back to Dashboard</a></p>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile - MyThoughts</title>
+    <link rel="icon" href="{{ url_for('static', filename='FaviconImage.png') }}" type="image/png">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+
+    button {
+        background-color: #04AA6D;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+
+    button:hover {
+        background-color: #038e5d;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        color: #04AA6D;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+
+<body>
+    <h2>Edit Profile</h2>
+
+    <form method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" value="{{ user[0] }}" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ user[1] }}"><br><br>
+
+        <label>New Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <p><a href="/dashboard">← Back to Dashboard</a></p>
+</body>
+</html>

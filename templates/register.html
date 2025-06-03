@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ url_for('static', filename='FaviconImage.png') }}" type="image/png">
+  <title>Login - MyThoughts</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      border: 3px solid #f1f1f1;
+      width: 100%;
+      max-width: 400px;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+
+    input[type=text], input[type=password], input[type=email] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .link-text {
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .link-text a {
+      color: #04AA6D;
+      text-decoration: none;
+    }
+
+    .link-text a:hover {
+      text-decoration: underline;
+    }
+
+    p.error {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<form method="post">
+  <h1 style="text-align: center; color: #04AA6D;">
+        MyThoughts✍️
+  </h1>
+
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" name="username" placeholder="Enter Username" required>
+
+    <label><b>Email</b></label>
+    <input type="email" name="email" placeholder="Enter Email" required>
+
+    <label><b>Password</b></label>
+    <input type="password" name="password" placeholder="Enter Password" required>
+
+    <button type="submit">Rigister</button>
+    <p class="error">{{ msg }}</p>
+
+    <div class="link-text">
+      <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
