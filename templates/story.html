@@ -61,6 +61,32 @@
         a:hover {
             text-decoration: underline;
         }
+
+    /* Style the Google Translate container */
+#google_translate_element {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Optional: Make the label visible and clean */
+.goog-te-gadget {
+    color: #000 !important;
+    font-family: Arial, sans-serif;
+}
+
+/* HIDE Google icon only (but keep text) */
+.goog-logo-link {
+    display: none !important;
+}
+
     </style>
 </head>
 <body>
@@ -78,6 +104,23 @@
     </form>
 
     <p><a href="/dashboard">← Back to Dashboard</a></p>
+
+    <div id="google_translate_element" style="float: right;"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,te,ta,ml,kn,bn,mr,gu,ur', // Customize this list
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" 
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
 
 </body>
 </html>
